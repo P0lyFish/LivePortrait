@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: liveportrait
+Version: 0.1.0
+Summary: Your project description here
+Author-email: Your Name <you@example.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: onnxruntime-gpu==1.18.0
+Requires-Dist: transformers==4.38.0
+Requires-Dist: numpy==1.26.4
+Requires-Dist: pyyaml==6.0.1
+Requires-Dist: opencv-python==4.10.0.84
+Requires-Dist: scipy==1.13.1
+Requires-Dist: imageio==2.34.2
+Requires-Dist: lmdb==1.4.1
+Requires-Dist: tqdm==4.66.4
+Requires-Dist: rich==13.7.1
+Requires-Dist: ffmpeg-python==0.2.0
+Requires-Dist: onnx==1.16.1
+Requires-Dist: scikit-image==0.24.0
+Requires-Dist: albumentations==1.4.10
+Requires-Dist: matplotlib==3.9.0
+Requires-Dist: imageio-ffmpeg==0.5.1
+Requires-Dist: tyro==0.8.5
+Requires-Dist: gradio==5.1.0
+Requires-Dist: pykalman==0.9.7
+Requires-Dist: pillow>=10.2.0
+Dynamic: license-file
