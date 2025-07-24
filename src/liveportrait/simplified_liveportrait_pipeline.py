@@ -48,7 +48,7 @@ class SimplifiedLivePortraitPipeline(object):
             'c_lip_lst': [],
         }
 
-        for i in track(range(n_frames), description='Making motion templates...', total=n_frames):
+        for i in range(n_frames):
             # collect s, R, δ and t for inference
             I_i = I_lst[i]
             x_i_info = self.live_portrait_wrapper.get_kp_info(I_i)
@@ -80,11 +80,6 @@ class SimplifiedLivePortraitPipeline(object):
         device = self.live_portrait_wrapper.device
         crop_cfg = self.cropper.crop_cfg
 
-        ######## process driving info ########
-        flag_load_from_template = is_template(args.driving)
-        driving_rgb_crop_256x256_lst = None
-        wfp_template = None
-
         ######## make motion template ########
         driving_lmk_crop = self.cropper.calc_lmks_from_cropped_video([driver])[0]
         driver = cv2.resize(driver, (256, 256))
@@ -99,8 +94,8 @@ class SimplifiedLivePortraitPipeline(object):
         # dump(wfp_template, driving_template_dct)
         # log(f"Dump motion template to {wfp_template}")
         # if not flag_is_driving_video:
-        #     c_d_eyes_lst = c_d_eyes_lst*n_frames
-        #     c_d_lip_lst = c_d_lip_lst*n_frames
+        c_d_eyes_lst = [c_d_eyes_lst]
+        c_d_lip_lst = [c_d_lip_lst]
 
         ######## prepare for pasteback ########
         R_d_0, x_d_0_info = None, None
@@ -211,7 +206,7 @@ class SimplifiedLivePortraitPipeline(object):
 
         ######### build the final concatenation result #########
         # driving frame | source frame | generation
-        if inf_cfg.flag_paste:
+        if inf_cfg.flag_pasteback:
             return I_p_pstbk
         else:
             return I_p_i
