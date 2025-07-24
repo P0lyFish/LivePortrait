@@ -74,7 +74,7 @@ class SimplifiedLivePortraitPipeline(object):
 
         return template_dct
 
-    def execute(self, source, driver):
+    def __call__(self, source, driver):
         # for convenience
         inf_cfg = self.live_portrait_wrapper.inference_cfg
         device = self.live_portrait_wrapper.device
