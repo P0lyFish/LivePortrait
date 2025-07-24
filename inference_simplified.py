@@ -54,6 +54,8 @@ def main():
 
     # run
     output = live_portrait_pipeline(source, driver)
+    driver = cv2.resize(driver, (output.shape[1], output.shape[0]))
+    print(source.shape, driver.shape, output.shape)
     vis = np.hstack((source, driver, output))
     cv2.imwrite('debug.png', vis)
 
