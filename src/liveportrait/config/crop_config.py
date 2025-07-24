@@ -11,9 +11,9 @@ from .base_config import PrintableConfig, make_abs_path
 
 @dataclass(repr=False)  # use repr from PrintableConfig
 class CropConfig(PrintableConfig):
-    insightface_root: str = make_abs_path("../../pretrained_weights/insightface")
-    landmark_ckpt_path: str = make_abs_path("../../pretrained_weights/liveportrait/landmark.onnx")
-    xpose_config_file_path: str = make_abs_path("../utils/dependencies/XPose/config_model/UniPose_SwinT.py")
+    insightface_root: str = "./model_weights/insightface"
+    landmark_ckpt_path: str = "./model_weights/liveportrait/landmark.onnx"
+    xpose_config_file_path: str = "../utils/dependencies/XPose/config_model/UniPose_SwinT.py"
     xpose_embedding_cache_path: str = make_abs_path('../utils/resources/clip_embedding')
 
     xpose_ckpt_path: str = make_abs_path("../../pretrained_weights/liveportrait_animals/xpose.pth")
