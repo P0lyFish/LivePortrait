@@ -34,3 +34,6 @@ LivePortrait_env/
 src/utils/dependencies/XPose/models/UniPose/ops/build
 src/utils/dependencies/XPose/models/UniPose/ops/dist
 src/utils/dependencies/XPose/models/UniPose/ops/MultiScaleDeformableAttention.egg-info
+
+model_weights/*
+!model_weights/.gitkeep
