@@ -4,6 +4,8 @@
 config dataclass used for inference
 """
 
+import torch
+
 import cv2
 from numpy import ndarray
 import pickle as pkl
@@ -37,7 +39,7 @@ class InferenceConfig(PrintableConfig):
     # EXPORTED PARAMS
     flag_use_half_precision: bool = True
     flag_crop_driving_video: bool = False
-    device_id: int = 0
+    device: torch.device = torch.device('cuda')
     flag_normalize_lip: bool = True
     flag_source_video_eye_retargeting: bool = False
     flag_eye_retargeting: bool = False
