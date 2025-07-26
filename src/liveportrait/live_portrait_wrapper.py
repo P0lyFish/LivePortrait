@@ -63,7 +63,7 @@ class LivePortraitWrapper(object):
         if self.device == "mps":
             ctx = contextlib.nullcontext()
         else:
-            ctx = torch.autocast(device_type=self.device[:4], dtype=torch.float16,
+            ctx = torch.autocast(device_type=self.device.type, dtype=torch.float16,
                                  enabled=self.inference_cfg.flag_use_half_precision)
         return ctx
 
