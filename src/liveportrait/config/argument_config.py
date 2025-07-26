@@ -27,7 +27,7 @@ class ArgumentConfig(PrintableConfig):
     flag_eye_retargeting: bool = False  # not recommend to be True, WIP; whether to transfer the eyes-open ratio of each driving frame to the source image or the corresponding source frame
     flag_lip_retargeting: bool = False  # not recommend to be True, WIP; whether to transfer the lip-open ratio of each driving frame to the source image or the corresponding source frame
     flag_stitching: bool = True  # recommend to True if head movement is small, False if head movement is large or the source image is an animal
-    flag_relative_motion: bool = True # whether to use relative motion
+    flag_relative_motion: bool = False # whether to use relative motion
     flag_pasteback: bool = True  # whether to paste-back/stitch the animated face cropping from the face-cropping space to the original image space
     flag_do_crop: bool = True  # whether to crop the source portrait or video to the face-cropping space
     driving_option: Literal["expression-friendly", "pose-friendly"] = "expression-friendly" # "expression-friendly" or "pose-friendly"; "expression-friendly" would adapt the driving motion with the global multiplier, and could be used when the source is a human image
